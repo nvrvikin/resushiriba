@@ -1,0 +1,96 @@
+
+#navMenuLogo{
+    width: 58px;
+    padding: 10px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.header-nav__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.1rem;
+    transition: .2s ease;
+    letter-spacing: 1px;
+
+    &:hover {
+        color: $action-color;
+    }
+
+    @include between($md, $lg){
+        font-size: 16px;
+    }
+    
+    @include between($sm, $md){
+        margin-top: 0;
+        font-size: 16px;
+        padding: 14px;
+    }
+    
+    @include smaller($sm){
+        margin-top: 0;
+        font-size: 14px;
+        padding: 12px;            
+    }
+}
+
+.header-nav__link_order{
+
+    .link-order__label{
+        position: relative;
+    }
+
+    .link-order__index{
+        color: $action-color;
+        position: absolute;
+        font-weight: 500;
+        font-size: .8rem;
+        top: -.2rem;
+        right: -1rem;
+
+        @include between($sm, $md){
+            top: 1rem;
+            right: calc(50% - 37px);
+        }
+        
+        @include smaller($sm){
+            top: 1rem;
+            right: calc(50% - 35px);
+        }
+    }
+}
+
+.header-nav__link_logo{
+    svg {
+        width: 65px;
+        height: 65px;
+        fill: #fafafa;
+        padding: 5px;
+        cursor: pointer;
+        
+        &:hover{
+            fill: $action-color;
+        }
+
+        @include between($sm, $md){
+            width: 4rem;
+            height: 4rem;
+        }
+
+        @include smaller($sm){
+            width: 3.5rem;
+            height: 3.5rem;   
+        }
+    }
+}
+
+.header-nav__link_home{
+    display: none;
+}

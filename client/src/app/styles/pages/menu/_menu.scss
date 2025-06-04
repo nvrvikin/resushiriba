@@ -1,0 +1,68 @@
+.menu-wrapper{
+    display: flex;
+    //flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    //height: calc(100vh - 68px - 60px); 
+    height: calc(100vh - 120px);
+
+    @include between($lg, $xl) {
+        height: 100%;
+
+    }
+
+    @include between($md, $lg){
+        height: 100%;
+    }
+
+    @include between($sm, $md){
+        height: 100%;           
+    }
+
+    @include smaller($sm){
+        height: 100%;
+    }
+}
+
+.menu-category-container{
+    //display: flex;
+    //flex-wrap: wrap;
+    display: grid;
+    //grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 15px;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100% - 15px);
+
+    @include between($lg, $xl){
+        font-size: 20px;
+        //background-color: red;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include between($md, $lg){
+        font-size: 20px;
+        //background-color: red;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    @include between($sm, $md){
+        font-size: 18px;
+        //background-color: green;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    @include smaller($sm){
+        height: auto;
+        flex-direction: column;
+        flex-wrap: initial;
+        align-items: center;          
+        //background-color: aqua;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}

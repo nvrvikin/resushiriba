@@ -1,0 +1,23 @@
+.footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+
+    @include between($md, $lg){
+        /*width: 350px;
+        align-items: stretch;
+        flex-direction: column;*/
+    }
+    
+    @include between($sm, $md){
+        width: 350px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+    
+    @include smaller($sm){
+        width: 350px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

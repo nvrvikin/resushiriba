@@ -1,0 +1,2 @@
+const GET_ITEMS = 'GET_ITEMS'
+const REMOVE_ITEM = 'REMOVE_ITEM'

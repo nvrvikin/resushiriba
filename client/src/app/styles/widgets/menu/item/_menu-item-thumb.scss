@@ -1,0 +1,372 @@
+.menu-item-thumb{
+    width: 314px;
+    height: 352px;
+    margin: 10px 1vw;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: .3s ease;
+    text-decoration: none;
+    padding-bottom: 40px;
+    background-color: #18181871;
+    //border: 1px solid #2e2e2ec7;
+
+    &:hover{
+        background-color: #2e2e2e;
+
+        .menu-item-thumb__img-container{
+            &:hover{
+                &::after{
+                    width: 102%;
+                    height: 95%;
+                }
+            }
+        }
+    }
+    
+    &.menu-item-thumb_new::after{
+        content: "новинка";
+        position: absolute;
+        top: 68px;
+        left: 10px;
+        padding: 2px 10px;
+        transform: translateX(-50%);
+        font-size: 12px;
+        font-weight: 400;
+        color: rgb(41, 255, 166);
+        background-color: #000000;
+    }
+
+    &.menu-item-thumb_hit::before{
+        content: "хит";
+        position: absolute;
+        letter-spacing: 2px;
+        top: 42px;
+        left: -2px;
+        padding: 2px 10px;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgb(255, 68, 55);
+        background-color: #000000;
+        z-index: 2;
+    }
+
+    @include between($md, $lg){
+        margin: 20px;
+        height: 387px;
+        width: 322px;
+    }
+    
+    @include between($sm, $md){
+        flex-direction: column;
+        margin: 20px;
+
+    }
+    
+    @include smaller($sm){
+        flex-direction: column;
+        margin: 5px;
+        width: 100%;
+
+    }
+}
+
+.menu-item-thumb__img-container{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 266px;
+    height: 176px;
+    justify-self: center;
+    align-self: center;
+    position: relative;
+    background-color: rgb(107, 107, 107);
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 0;
+        width: 107%;
+        height: 88%;
+        border: 1px solid #fff;
+        transition: .3s ease;
+    }
+
+    &:hover{
+        &::after{
+            width: 102%;
+            height: 95%;
+        }
+
+        .menu-item-thumb__add-btn {
+            height: 60px;
+            width: 60px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            transform: translate(-50%, -50%) scale(1);
+            line-height: normal;
+        }
+
+        .menu-item-thumb__remove-btn_visible {
+            font-size: 30px;
+            opacity: 1;
+            height: 40px;
+            transform: translate(-50%, -50%) scale(1);
+            width: 40px;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            
+            &:hover{
+                border: 1px solid #000000;
+                color: #000000;
+            }
+        }
+
+        .menu-item-thumb__img {
+            opacity: 0.5;
+            transition: .3s ease;
+        }
+        
+        .menu-item-thumb__added-count{
+            transform: translate(-50%, -50%) scale(0.5);
+            left: calc(50% - 65px);
+        }
+    }
+
+    
+
+    .menu-item-thumb__added-count{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        z-index: 2;
+        text-align: center;
+        height: 60px;
+        width: 60px;
+        font-weight: 800;
+        border-radius: 50%;
+        background-color: #5100ff00;
+        color: #ffffff00;
+        line-height: normal;
+        transition: .3s ease;
+
+        &.menu-item-thumb__added-count_visible{
+            color: #131313;
+            background-color: #fefefeff;
+            transform: translate(-50%, -50%) scale(1);
+            //text-shadow: 0px 0px 10px #ffffff;
+            transition: .3s ease;
+        }
+    }
+
+    .menu-item-thumb__remove-btn{
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 60px);
+        height: 40px;
+        width: 40px;
+        transform: translate(-50%, -50%) scale(0);
+        font-size: 30px;
+        text-align: center;
+        opacity: 0;
+        z-index: 2;
+        font-weight: 900;
+        transition: .3s ease;
+        border-radius: 30px;
+        line-height: normal;
+        color: #ffffff00;
+        border: 1px solid #ffffff00;
+    }
+
+    .menu-item-thumb__add-btn{
+        text-align: center;
+        text-justify: auto;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        transform: translate(-50%, -50%) scale(0);
+        //font-size: 50px;
+        font-size: 50px;
+        font-weight: 900;
+        color: #ffffff00;
+        //padding: 5px;
+        //width: 50px;
+        width: 0;
+        height: 0;
+        //height: 50px;
+        border-radius: 30px;
+        border: 1px solid #ffffff00;
+        transition: .3s ease;
+
+        &:hover {
+            border: 1px solid #000000;
+            transition: .3s ease;
+            color: #000000;
+        }
+    }
+
+    @include between($md, $lg){
+        width: 280px;
+        height: 170px;
+        margin: 23px 0;
+    }
+    
+    @include between($sm, $md){
+        width: 270px;
+        height: 164px;
+        margin: 21px 0;
+    }
+    
+    @include smaller($sm){
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        height: 158px;
+        margin: 19px 0;
+    }
+}
+
+.menu-item-thumb__img{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+    background-size: cover;
+    transition: .3s ease;
+    background-color: #e7e7e7;
+}
+
+.menu-item-thumb__title{
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 24px;
+    margin-bottom: 2px;
+    color: $darker-action-color;
+
+    @include between($md, $lg){
+        margin: 0 22px;
+    }
+    
+    @include between($sm, $md){
+        margin: 0 20px;
+        font-size: 18px;
+    }
+    
+    @include smaller($sm){
+        margin: 0 18px;
+        font-size: 18px;
+    }
+}
+
+.menu-item-thumb__desc{
+    margin: 0 1.5rem;
+    text-align: left;
+    color: #dfdfdf;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: normal;
+
+    @include between($md, $lg){
+        margin: 0 22px;
+        font-size: 14px;
+    }
+    
+    @include between($sm, $md){
+        margin: 0 20px;
+        font-size: 14px;
+
+    }
+    
+    @include smaller($sm){
+        margin: 0 18px;
+        font-size: 14px;
+    }
+}
+
+.menu-item-thumb__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3rem 1.5rem;
+    //padding-top: .5rem;
+}
+
+.menu-item-thumb__price{
+    color: $darker-action-color;
+    //position: absolute;
+    text-align: end;
+    font-size: 24px;
+    bottom: 10px;
+    right: 15px;
+
+    @include between($md, $lg){
+        font-size: 22px;           
+    }
+
+    @include between($sm, $md){
+        font-size: 20px;           
+    }
+
+    @include smaller($sm){
+        font-size: 18px;           
+    }
+}
+
+.menu-item-thumb__weight{
+    //position: absolute;
+    font-size: 18px;
+    color: #fff;
+
+    @include between($md, $lg){
+        font-size: 18px;           
+    }
+
+    @include between($sm, $md){
+        font-size: 16px;           
+    }
+
+    @include smaller($sm){
+        font-size: 14px;           
+    }
+}
+
+
+.menu-item-previw-thumb {
+    width: 314px;
+    height: 352px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-bottom: 40px;
+    margin: 10px 1vw;
+    background-color: #68686825;
+    animation: 2s ease infinite previewAnim;
+
+}
+
+@keyframes previewAnim {
+    0% {
+        opacity: 0.5;
+    }
+    
+    50% {
+        opacity: 0.3;
+    }
+    
+    100% {
+        opacity: 0.5;
+    }
+}

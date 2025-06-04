@@ -1,0 +1,36 @@
+
+.footer{
+    position: relative;
+    width: 100%;
+    //height: $footer-height;
+    height: auto;
+    padding-top: 1.6rem;
+    padding-bottom: 4rem; 
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //letter-spacing: .5px;
+
+    @include larger($xl){
+
+    }
+    
+    @include between($lg, $xl){
+        
+    }
+    
+    @include between($md, $lg){
+            
+    }
+    
+    @include between($sm, $md){
+        height: auto;
+        padding-bottom: 60px;
+    }
+    
+    @include smaller($sm){
+        height: auto;
+        padding-bottom: 60px;
+    }
+}

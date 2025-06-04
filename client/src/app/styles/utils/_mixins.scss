@@ -1,0 +1,17 @@
+@mixin larger( $a ) {
+    @media screen and ( min-width: ($a + 'px') ) {
+        @content;
+    }
+}
+
+@mixin between( $a, $b ) {
+    @media screen and ( min-width: ($a + 'px') ) and ( max-width: (($b - 1) + 'px') ) {
+        @content;
+    }
+}
+
+@mixin smaller( $a ) {
+    @media screen and ( max-width: (($a - 1) + 'px') ) {
+        @content;
+    }
+}

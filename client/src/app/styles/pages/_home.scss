@@ -1,0 +1,440 @@
+.home-wrapper{
+    background-position: center;
+    background-clip: content-box;
+    background-size: 300px;
+    overflow-x: hidden;
+}
+
+.home-dark-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#00000000, #000000aa);
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.hand-img{
+    display: none;
+    position: fixed;
+    top: 70%;
+    z-index: 3;
+    width: 60%;
+    left: -20%; 
+    transition: .5s ease;
+    pointer-events: none;
+    transition: none;
+}
+
+.greet-wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    //background-image: $greet-img;
+    background-position: top left;
+    background-size: auto 100%;
+    //background-attachment: fixed;
+    background-clip: content-box;
+    position: relative;
+    //box-shadow: 0px 0px 10px 20px rgb(0, 0, 0);
+    //transform-style: preserve-3d;
+
+    &::after{
+        //content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.6;
+    }
+
+    &.greet-wrapper-rounder{
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        background-position: center;
+        background-attachment: fixed;
+        bottom: -50px;
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.6;
+        }
+    }
+        
+    .home-smoke_left {
+        left: -300px;
+        position: absolute;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 400px;
+        //max-width: 100%;
+        overflow-x: hidden;
+        width: 2000px;
+        //background-color: #ffffff88;
+    }
+
+    .home-top-light {
+        position: absolute;
+        border-radius: 50%;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        overflow-x: hidden;
+
+        &_warm {
+            background-color: #ee4e0f;
+            height: 500px;
+            width: 500px;
+            top: -200px;
+            right: -200px;
+            filter: blur(300px);
+            animation-name: top-light-flick-warm;
+        }
+
+        &_hot {
+            background-color: #ee300fb2;
+            height: 300px;
+            width: 300px;
+            top: 300px;
+            right: -200px;
+            animation-direction: reverse;
+            filter: blur(150px);
+            animation-name: top-light-flick-warm;
+        }
+
+        &_cold {
+            background-color: #0ed6939f;
+            height: 600px;
+            width: 600px;
+            bottom: -200px;
+            left: -200px;
+            filter: blur(300px);
+            animation-name: top-light-flick;
+        }
+    }
+}
+
+@keyframes top-light-flick {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes top-light-flick-warm {
+    0% {
+        opacity: 1;
+    }
+    2% {
+        opacity: 0.8;
+    }
+    5% {
+        opacity: 0.9;
+    }
+    8% {
+        opacity: 0.6;
+    }
+    9% {
+        opacity: 0.8;
+    }
+    14% {
+        opacity: 0.4;
+    }
+    16% {
+        opacity: 0.7;
+    }
+    20% {
+        opacity: 0.6;
+    }
+    23% {
+        opacity: 1;
+    }
+    27% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.firstUnder{
+    
+    //background-image: $greet-img;
+    
+    //background-clip: content-box;
+    background-size: cover;
+    
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.6;
+        //border-radius: 0 0 100% 100%;
+        mask: url('/static/svg/rounded_under.svg');
+        //mask-size: cover;
+        mask-size: 100% 100%;
+    }
+}
+
+.home-title{
+    z-index: 2;
+    position: relative;
+    //display: flex;
+    display: none;
+    width: calc(60% + 2vmin);
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    //padding-bottom: 5%;
+    //color: transparent;
+    background-position: center;
+    //background-repeat: no-repeat;
+    //background-image: linear-gradient(30deg, #fff, #bbb);
+    //background-size: contain;
+    //background-attachment: fixed;
+    //background-clip: text;
+    //-webkit-background-clip: text;
+    background: $action-color;
+
+    .home-title__text{
+        color: #ffffff;
+        font-family: 'Frisky Wind';
+        font-size: 120px;
+        position: absolute;
+        //width: 120%;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        //transform: translateX(-50%);
+        transform: translateY(-50%);
+        white-space: nowrap;
+
+        @include between($md, $lg){
+            font-size: calc(80px + 2vmin);
+        }
+        
+        @include between($sm, $md){
+            font-size: calc(50px + 2vmin);
+
+        }
+        
+        @include smaller($sm){
+            font-size: calc(30px + 2vmin);
+        }
+    }
+
+    @include between($md, $lg){
+        height: 8px;
+        width: calc(70% + 2vmin);
+
+    }
+    
+    @include between($sm, $md){
+        height: 6px;
+        width: calc(70% + 2vmin);
+    }
+    
+    @include smaller($sm){
+        height: 4px;
+        width: calc(80% + 2vmin);
+
+    }
+}
+
+.home-label{
+    width: 50%;
+    height: 50%;
+    z-index: 2;
+    margin-bottom: 50px;
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .home-label__vector{
+        width: 90%;
+        height: 100%;
+    }
+
+    @include between($md, $lg){
+        width: 60%;
+        height: 60%;
+    }
+
+    @include between($sm, $md){
+        width: 70%;
+        height: 70%;
+    }
+    
+    @include smaller($sm){
+        width: 80%;
+        height: 80%;
+    }
+}
+
+/*.home-clipped-rounded-under{
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/static/img/home_head.png');
+    position: absolute;
+    bottom: -80px;
+    clip-path: url("#clip-shape");
+}*/
+
+.home-rounded-under{
+    fill: violet;
+    width: 100%;
+    height: auto;
+    transform: translateY(100%);
+    position: absolute;
+    bottom: 0px;
+}
+
+.rounded-under__img{
+    height: 500px;
+    width: 500px;
+    background-repeat: repeat;
+    background-color: #f9f310;
+}
+
+.hits-wrapper{
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh + 80px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-position: center;
+    background-clip: content-box;
+    background-size: 300px;
+
+    .hits__title{
+        height: 12vw;
+        width: 100%;
+        
+        @include between($md, $lg){
+           padding-top: 88px;
+           width: 60%;
+           height: 60%;
+        }
+        
+        @include between($sm, $md){
+            width: 70%;
+            height: 70%;
+        }
+        
+        @include smaller($sm){
+            width: 80%;
+            height: 80%;
+            
+        }
+    }
+
+    .hits-items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 68px;
+        
+        @include between($md, $lg){
+        }
+        
+        @include between($sm, $md){
+            flex-direction: column;
+    
+        }
+        
+        @include smaller($sm){
+            flex-direction: column;
+        }
+    }
+
+    @include smaller($sm){
+        display: none;
+
+    }
+    
+}
+
+@keyframes flickering {
+    from {
+        text-shadow: 0 0 70px rgb(240, 67, 231);
+    }
+    20% {
+        text-shadow: 0 0 100px rgb(220, 67, 240);
+    }
+    75% {
+        text-shadow: 0 0 80px rgb(216, 55, 135);
+    }
+    to {
+        text-shadow: 0 0 90px rgb(207, 42, 138);
+    } 
+}
+
+@keyframes sparkle{
+    from {
+        top: -20px;
+        left: -15px;
+        width: 12px;
+        height: 12px;
+        transform: rotateZ(0);
+    }
+    20% {
+        top: 10px;
+        right: -15px;
+        width: 20px;
+        height: 20px;
+        transform: rotateZ(60deg);
+    }
+    75% {
+        top: -30px;
+        right: 50%;
+        width: 6px;
+        height: 6px;
+        transform: rotateZ(30deg);
+    }
+    to {
+        top: 5px;
+        left: 100px;
+        width: 80px;
+        height: 80px;
+        transform: rotateZ(180deg);
+    } 
+}

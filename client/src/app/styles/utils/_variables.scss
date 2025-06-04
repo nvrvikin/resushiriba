@@ -1,0 +1,94 @@
+// COLORS
+
+$darker-action-color: #dc5a3c;
+$lighter-action-color: #ff9379;
+$action-color: #ef6443;
+$active-category-color: #eb2e21;
+$action-greyed-color: #7a7a7a;
+
+//$dark-bg-color: #242424;
+$dark-bg-color: #202020;
+$contacts-second-bg-color: #2f2f2f;;
+
+// NUMBERS
+
+$menu-round-top: 40px;
+$menu-round-bottom: 60px;
+
+//$header-height: 68px;
+$header-height: 120px;
+$title-height: 104px;
+$footer-height: 162px;
+ 
+// BREAKPOINTS
+$sm: 480;
+$md: 768;
+$lg: 1024;
+$xl: 1440;
+
+$xs: 350;
+
+// CONTENT
+$rubles: ' р';
+$gramm: ' гр.';
+
+// IMAGE SOURCES
+$greet-img: url('/static/img/head_0.jpg');
+$greet-overlay-img: url('/static/img/inked-bg.png');
+$wood-img: url('/static/img/32.png');
+$contacts-under-img: url('/static/img/ink-splashes-contacts_2.png');
+$contacts-under-svg: url('/static/svg/ink-splashes-contacts-02.svg');
+//$contacts-delivery-img: url('/static/pic/delivery-contacts-icon.png');
+//$contacts-geo-img: url('/static/pic/geo-contacts-icon.png');
+//$contacts-social-img: url('/static/pic/social-contacts-icon.png');
+
+// OTHERS
+$standart-transition: .3s ease;
+
+
+/*
+@media screen and (min-width: $xl) {
+
+}
+
+@media screen and (min-width: $lg) and (max-width: calc($xl - 1px)) {
+
+}
+
+@media screen and (min-width: $md) and (max-width: calc($lg - 1px)) {
+
+}
+
+@media screen and (min-width: calc($sm + 1px)) and (max-width: calc($md - 1px)) {
+
+}
+
+@media screen and (max-width: $sm) {
+
+}
+*/
+
+
+
+
+/* MIXIN USAGE TEMPLATE
+@include larger($xl){
+
+}
+
+@include between($lg, $xl){
+
+}
+
+@include between($md, $lg){
+
+}
+
+@include between($sm, $md){
+
+}
+
+@include smaller($sm){
+
+}
+*/

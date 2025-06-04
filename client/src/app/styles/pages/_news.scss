@@ -1,0 +1,392 @@
+.news-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #eee;
+
+    .news-container{
+        border: 2px solid #999;
+        border-top: none;
+        //width: 1128px;
+        width: 80%;
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include between($md, $lg){
+            width: 90%;
+
+        }
+        
+        @include between($sm, $md){
+            width: 100%;        
+            border: none;
+        }
+        
+        @include smaller($sm){
+            width: 100%;
+            border: none;                 
+        }
+    }
+
+    .news-discount{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    
+
+        .news-discount__title{
+            text-align: center;
+            letter-spacing: 2px;
+            font-size: 42px;
+            font-style: italic;
+            color: #eee;
+            text-align: center;
+            margin-top: 40px;
+
+            @include between($md, $lg){
+                font-size: 40px;
+                margin-top: 38px;
+
+            }
+            
+            @include between($sm, $md){
+                font-size: 36px;
+                margin-top: 36px;
+            }
+            
+            @include smaller($sm){
+                font-size: 32px;
+                margin-top: 34px;
+            }
+        }
+
+        .news-discount__list{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px; 
+            
+            @include between($md, $lg){
+                width: 90%;
+            }
+            
+            @include between($sm, $md){
+                width: calc(100% - 10px);
+            }
+            
+            @include smaller($sm){
+                width: calc(100% - 5px);
+            }
+        }
+
+        .news-discount__item{
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: left;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            margin-left: 46px;
+            margin-top: 10px;
+            line-height: normal;
+
+            .news-discount__item-subtext{
+                font-size: 18px;
+
+                @include between($md, $lg){
+                    font-size: 16px;
+                }
+                
+                @include between($sm, $md){
+                    font-size: 14px;                
+                }
+                
+                @include smaller($sm){
+                    font-size: 14px;
+                }
+            }
+
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 54px;
+                height: 54px;
+                left: -36px;
+                top: -6px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-image: url('/static/svg/tag-01.svg');
+
+                @include between($md, $lg){
+                    width: 52px;
+                    height: 52px;
+                }
+                
+                @include between($sm, $md){
+                    width: 50px;
+                    height: 50px;            
+                }
+                
+                @include smaller($sm){
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            @include between($md, $lg){
+                font-size: 22px;
+            }
+            
+            @include between($sm, $md){
+                font-size: 20px;            
+            }
+            
+            @include smaller($sm){
+                font-size: 18px;
+            }
+        }
+
+        .news-discount__hint{
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-align: center;
+            line-height: normal;
+            margin-top: 30px;
+
+            &:last-child{
+                margin: 0;
+            }
+
+            @include between($md, $lg){
+                font-size: 18px;
+            }
+            
+            @include between($sm, $md){
+                font-size: 16px;
+            }
+            
+            @include smaller($sm){
+                font-size: 14px;
+            }
+        }
+    }
+
+    .news-breakline{
+        height: 1px;
+        width: 150px;
+        margin: 50px;
+        background-color: #ccc;
+
+        @include between($md, $lg){
+            width: 140px;
+        }
+        
+        @include between($sm, $md){
+            width: 130px;
+        }
+        
+        @include smaller($sm){
+            width: 120px;
+        }
+    }
+
+    .news-certificate{
+        width: 80%;
+        padding-bottom: 20px;
+
+        @include between($md, $lg){
+            width: 90%;
+        }
+        
+        @include between($sm, $md){
+            width: calc(100% - 20px);
+        }
+        
+        @include smaller($sm){
+            width: calc(100% - 10px);
+        }
+    }
+
+    .news-certificate__title-wrapper{
+        margin-bottom: 20px;
+
+        @include between($md, $lg){
+            margin-bottom: 18px;
+        }
+        
+        @include between($sm, $md){
+            margin-bottom: 16px;
+        }
+        
+        @include smaller($sm){
+            margin-bottom: 14px;
+        }
+    }
+
+    .news-certificate__title{
+        text-align: center;
+        font-weight: 300;
+        font-size: 34px;
+        margin: 0;
+        line-height: normal;
+
+        @include between($md, $lg){
+            font-size: 32px;
+        }
+        
+        @include between($sm, $md){
+            font-size: 30px;
+        }
+        
+        @include smaller($sm){
+            font-size: 28px;
+        }
+    }
+
+    .news-certificate__text-wrapper{
+        margin-bottom: 8px;
+    }
+
+    .news-certificate__text{
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin: 0;
+        line-height: 30px;
+        font-size: 16px;
+        
+        @include between($sm, $md){
+            font-size: 14px;
+        }
+        
+        @include smaller($sm){
+            font-size: 14px;
+        }
+        
+    }
+
+    .news-certificate__values-list{
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+
+        .news-certificate__value{
+            color: $action-color;
+            font-size: 28px;
+            font-weight: 100;
+            font-size: 100;
+            text-decoration: none;
+            list-style: none;
+
+            @include between($md, $lg){
+                font-size: 26px;
+                padding: 0 20px;
+            }
+            
+            @include between($sm, $md){
+                font-size: 24px;
+                padding: 0 20px;
+
+            }
+            
+            @include smaller($sm){
+                font-size: 22px;
+                padding: 0 10px;
+            }
+        }
+
+        @include between($md, $lg){
+            //font-size: 32px;
+        }
+        
+        @include between($sm, $md){
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        
+        @include smaller($sm){
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    }
+
+    .news-certificate-conditions{
+        font-size: 14px;
+        letter-spacing: 2px;
+        display: flex;
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
+        font-weight: 100;
+
+
+        .news-certificate-conditions__title{
+            font-weight: 100;
+            font-size: 14px;
+        }
+
+        .news-certificate-conditions__list{
+            list-style: none;
+            font-weight: 100;
+            
+            @include between($sm, $md){
+                padding-inline-start: 30px;
+
+            }
+            
+            @include smaller($sm){
+                padding-inline-start: 25px;
+
+            }
+        }
+
+        .news-certificate-conditions__item{
+            font-weight: 100;
+            margin-bottom: 15px;
+            position: relative;
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                left: -48px;
+                top: -6px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-image: url('/static/svg/chopsticks.svg');
+
+                @include between($md, $lg){
+                    width: 38px;
+                    height: 38px;
+                    left: -46px;
+                    top: -7px;
+                }
+                
+                @include between($sm, $md){
+                    width: 36px;
+                    height: 36px;
+                    left: -44px;
+                    top: -7px;
+                }
+                
+                @include smaller($sm){
+                    width: 32px;
+                    height: 32px;
+                    left: -42px;
+                    top: -4px;
+                }
+            }
+        }
+    }
+}
+

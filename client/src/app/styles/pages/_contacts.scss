@@ -1,0 +1,418 @@
+.contacts-wrapper{
+    width: 100%;
+    min-height: calc(100vh - $header-height - $footer-height);
+    display: flex;
+    //background-image: linear-gradient(-30deg, $dark-bg-color, $contacts-second-bg-color);
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 200px;
+    color: #ffffff;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        background-image: $contacts-under-img;
+    }
+
+    .contacts-logo{
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 15px;
+        fill: $dark-bg-color;
+    } 
+}
+
+
+@include larger($xl){
+
+}
+
+@include between($lg, $xl){
+
+}
+
+@include between($md, $lg){
+
+}
+
+@include between($sm, $md){
+
+}
+
+@include smaller($sm){
+
+}
+
+
+.contacts-item{
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include between($lg, $xl){
+        font-size: 12px;
+    }
+
+    
+
+    .contacts-item__img{
+        width: 200px;
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: $standart-transition;
+
+        /*&:hover{
+            width: 220px;
+            height: 220px;
+            filter: contrast(60%);
+            //transform: rotateZ(360deg);
+        }*/
+    }
+
+    .contacts-item__img_delivery{
+        background-position: center;
+    }
+
+    .contacts-item__title{
+        font-weight: 500;
+        font-size: 28px;
+        letter-spacing: .9px;
+        text-align: center;
+        padding: 5px 0;
+        padding-top: 15px;
+        margin: 0;
+    }
+
+    .contacts-item__subtitle{
+        font-size: 22px;
+        font-weight: 100;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contacts-item__text-wrapper{
+        display: flex;
+
+        @include between($sm, $md){
+            flex-direction: column;
+        }
+
+        @include smaller($sm){
+            flex-direction: column;
+        }
+    }
+
+    .contacts-item__text-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 0 20px;
+
+        @include between($sm, $md){
+            margin: 0;
+        }
+    }
+
+    // DELIVERY
+
+    .contacts-delivery__title{
+        font-size: 22px;
+
+        @include between($md, $lg){
+            font-size: 19px;
+        }
+
+        @include between($sm, $md){
+            font-size: 18px;
+            margin-top: 30px;
+        }
+
+        @include smaller($sm){
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+
+    .contacts-delivery__text, .contacts-delivery__subtext{
+        font-size: 20px;
+        margin: 0;
+        padding: 2px 0;
+        font-style: italic;
+
+        @include between($md, $lg){
+            font-size: 18px;
+        }
+
+        @include between($sm, $md){
+            font-size: 18px;
+        }
+
+        @include smaller($sm){
+            font-size: 14px;
+        }
+
+    }
+
+    .contacts-delivery__text{
+        margin-top: 4px;
+        margin-left: 25px;
+    }
+
+    .contacts-delivery__subtext{
+        margin-left: 118px;
+
+        @include between($md, $lg){
+            margin-left: 109px;
+            //font-size: 18px;
+        }
+
+        @include between($sm, $md){
+            margin-left: 108px;
+            //font-size: 18px;
+        }
+
+        @include smaller($sm){
+            margin-left: 91px;
+            //font-size: 14px;
+        }
+    }
+
+    .text-action{
+        color: $action-color;
+    }
+
+    // GEO
+
+    .contacts-geo__title{
+        font-size: 22px;
+        font-style: italic;
+        margin-bottom: 2px;
+
+        @include between($md, $lg){
+            font-size: 19px;
+        }
+
+        @include between($sm, $md){
+            font-size: 18px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        @include smaller($sm){
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    }
+
+    .contacts-geo__phone{
+        text-decoration: none;
+        font-weight: 100;
+        font-size: 22px;
+        color: $action-color;
+        transition: $standart-transition;
+        position: relative;
+        margin: 2px;
+        margin-left: 48px;
+        display: flex;
+        align-items: center;
+
+        .contacts-geo__phone-icon{
+            width: 20px;
+            height: 20px;
+            transition: $standart-transition;
+            fill: $action-color;
+            margin-right: 8px;
+            transform: translateY(-6px);
+        }
+
+        &:hover{
+            color: #fff;
+
+            .contacts-geo__phone-icon{
+                fill: #fff;
+            }
+        }
+
+        @include between($md, $lg){
+            margin-left: 45px;
+            font-size: 20px;
+
+
+            .contacts-geo__phone-icon{
+                width: 18px;
+                height: 18px;
+                transform: translateY(-5px);
+            }
+        }
+
+        @include between($sm, $md){
+            width: fit-content();
+            margin-left: 10px;
+            font-size: 18px;
+
+            .contacts-geo__phone-icon{
+                width: 16px;
+                height: 16px;
+                transform: translateY(-4px);
+            }
+        }
+
+        @include smaller($sm){
+            margin-left: 10px;
+            font-size: 16px;
+
+            .contacts-geo__phone-icon{
+                width: 14px;
+                height: 14px;
+                transform: translateY(-5px);
+            }
+        }
+    }
+
+    // SOCIAL MEDIA
+
+    .contacts-item__link-container{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacts-item__link{
+        color: #8f8f8f;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 300;
+        margin-left: 36px;
+        position: relative;
+        margin-bottom: 20px;
+        transition: $standart-transition;
+
+        &:hover{
+            color: #fff;
+
+            .contacts-item__icon{
+                fill: #fff;
+            }
+        }
+
+        .contacts-item__icon{
+            width: 30px;
+            height: 30px;
+            fill: #8f8f8f;
+            transition: $standart-transition;
+            margin-right: 16px;
+            transform: translateY(-2px);
+        }
+        
+        @include between($md, $lg){
+            font-size: 20px;
+            margin-left: 30px;
+            margin-bottom: 18px;
+
+            .contacts-item__icon{
+                width: 28px;
+                height: 28px;
+                margin-right: 14px;
+                transform: translateY(0);
+
+            }
+        }
+
+        @include between($sm, $md){
+            font-size: 16px;
+            margin-left: 20px;
+            margin-bottom: 16px;
+
+            .contacts-item__icon{
+                width: 26px;
+                height: 26px;
+                margin-right: 12px;
+                transform: translateY(0);
+            }
+        }
+
+        @include smaller($sm){
+            font-size: 14px;
+            margin-left: 10px;
+            margin-bottom: 14px;
+
+            .contacts-item__icon{
+                width: 24px;
+                height: 24px;
+                margin-right: 12px;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    @include between($md, $lg){
+        .contacts-item__title{
+            font-size: 26px;
+        }
+
+        .contacts-item__subtitle{
+            font-size: 20px;
+        }
+
+        .contacts-item__img{
+            width: 180px;
+            height: 180px;
+        }
+    }
+
+    @include between($sm, $md){
+        padding: 20px 0;
+
+        .contacts-item__title{
+            font-size: 24px;
+        }
+
+        .contacts-item__subtitle{
+            font-size: 18px;
+        }
+
+        .contacts-item__img{
+            width: 160px;
+            height: 160px;
+        }
+    }
+
+    @include smaller($sm){
+        padding: 10px 0;
+        margin-bottom: 20px;
+
+        .contacts-item__title{
+            font-size: 20px;
+            
+        }
+        .contacts-item__subtitle{
+            font-size: 16px;
+        }
+
+        .contacts-item__img{
+            width: 30vw;
+            height: 30vw;
+        }
+    }
+
+    
+}
+
