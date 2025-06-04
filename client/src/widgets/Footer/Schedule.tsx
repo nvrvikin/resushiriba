@@ -1,4 +1,4 @@
-import ItemRow from "./schedule/itemRow"
+import ItemRow from "./schedule/ItemRow"
 
 
 function Schedule() {

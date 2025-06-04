@@ -5,7 +5,7 @@ interface IItremRow {
 }
 
 
-export default function ItemRow({day, from, to}:IItremRow) {
+ function ItemRow({day, from, to}:IItremRow) {
   return (
     <>
         <span className="footer-schedule__item footer-schedule__item_day">{ day }</span>
@@ -15,3 +15,5 @@ export default function ItemRow({day, from, to}:IItremRow) {
     </>
   )
 }
+
+export default ItemRow
