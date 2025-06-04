@@ -142,7 +142,7 @@ export function Index({ /*items, getItems*/ }) {
                 <div className='home-dark-overlay'></div>
                 <section className="greet-wrapper" style={{ backgroundImage: `url(${BlackStoneWallImg})`}}>
                     <div className="home-label">
-                        <img className="home-label__vector" src={`url(${HomeLabelImg})`} alt="Вкус Японии"></img>
+                        <img className="home-label__vector" src={ HomeLabelImg } alt="Вкус Японии"></img>
                     </div>
                     <div className='home-top-light home-top-light_warm' />
                     <div className='home-top-light home-top-light_hot' />
@@ -151,7 +151,7 @@ export function Index({ /*items, getItems*/ }) {
                 </section>                
 
                 <section className="hits-wrapper">
-                    <img className='hits__title' src={`url(${CheckHitsImg})`} alt="Попробуйте наши хиты"></img>
+                    <img className='hits__title' src={ CheckHitsImg } alt="Попробуйте наши хиты"></img>
                     <div className='hits-items'>
                         {
                             hitsData.map(item =>
