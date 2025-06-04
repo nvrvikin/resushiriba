@@ -6,6 +6,8 @@ import itemsData from '../app/data/localItems'
 
 import SmokeLeftImg from '/src/img/s2.png';
 import BlackStoneWallImg from '/src/img/black-stone-wall.jpg';
+import HomeLabelImg from '/src/svg/splashed_home_label.svg';
+import CheckHitsImg from '/src/svg/check-hits.svg';
 
 import Header from '../widgets/Header';
 import Footer from '../widgets/Footer/Footer';
@@ -139,11 +141,8 @@ export function Index({ /*items, getItems*/ }) {
             <div className="home-wrapper">
                 <div className='home-dark-overlay'></div>
                 <section className="greet-wrapper" style={{ backgroundImage: `url(${BlackStoneWallImg})`}}>
-                    <div className="home-title">
-                        <span className="home-title__text">Вкус Японии</span>
-                    </div>
                     <div className="home-label">
-                        <img className="home-label__vector" src="/static/svg/splashed_home_label.svg" alt="Вкус Японии"></img>
+                        <img className="home-label__vector" src={`url(${HomeLabelImg})`} alt="Вкус Японии"></img>
                     </div>
                     <div className='home-top-light home-top-light_warm' />
                     <div className='home-top-light home-top-light_hot' />
@@ -152,7 +151,7 @@ export function Index({ /*items, getItems*/ }) {
                 </section>                
 
                 <section className="hits-wrapper">
-                    <img className='hits__title' src="/static/svg/check-hits.svg" alt="Попробуйте наши хиты"></img>
+                    <img className='hits__title' src={`url(${CheckHitsImg})`} alt="Попробуйте наши хиты"></img>
                     <div className='hits-items'>
                         {
                             hitsData.map(item =>
