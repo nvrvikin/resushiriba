@@ -1,2 +1,7 @@
 const GET_ITEMS = 'GET_ITEMS'
 const REMOVE_ITEM = 'REMOVE_ITEM'
+
+export {
+    GET_ITEMS,
+    REMOVE_ITEM
+}
