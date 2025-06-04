@@ -1,10 +1,35 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getItems } from '../../actions/items';
-import MenuCategory from './MenuCategory';
 
-export class MenuItems extends Component {
+//import { connect } from 'react-redux';
+//import PropTypes from 'prop-types';
+//import { getItems } from '../../actions/items';
+import { IMenuItem } from '@/app/types/types';
+
+interface IMenuItems {
+    items: IMenuItem[]
+}
+
+function MenuItems(props: IMenuItems) {
+    const { items } = props
+
+    return (
+            <div className="menu-wrapper">
+                <div className="menu-category-container">
+                    { 
+                        items.map(item => (
+                            <div key={ item.id }>
+                                <img src={ item.image_src } />
+                                <h3>{ item.title }</h3>
+                                <a href={ item.title }></a>
+                            </div>
+                        )
+                    )}
+                </div>
+            </div>
+        )
+}
+
+/*
+export class MenuItemss extends Component {
     static propTypes = {
         items : PropTypes.array.isRequired
     }
@@ -14,26 +39,16 @@ export class MenuItems extends Component {
     }
 
     render() {
-        return (
-            <div className="menu-wrapper">
-                <div className="menu-category-container">
-                    { 
-                        this.props.items.map(item => (
-                            <MenuCategory key={ item.id }
-                              imgSrc={ item.image_source }
-                              title={ item.title }
-                              to={ item.to }
-                            />
-                        )
-                    )}
-                </div>
-            </div>
-        )
+        
     }
 }
-
+*/
+/*
 const mapStateToProps = state => ({
     items: state.items.items
 });
 
 export default connect(mapStateToProps, { getItems })(MenuItems); 
+*/
+
+export default MenuItems

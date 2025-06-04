@@ -1,7 +1,7 @@
-import React from 'react';
+import { IIcon } from "@/app/types/types";
 
-const PhoneIcon = props => (
-    <div className={props.className}>
+const PhoneIcon = ( { className }: IIcon ) => (
+    <div className={ className }>
         <svg version="1.1" id="phone" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 512 512" xmlSpace="preserve">
 			<g>

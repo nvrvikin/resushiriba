@@ -10,14 +10,14 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import OrderTable from './OrderTable/OrderTable';
-import { DEAFULT_LOCAL_IDS, DEFAULT_ORDER_DATA } from './data/order_data';
+import { DEFAULT_ORDER_DATA } from './data/order_data';
 
 export function OrderContent({ /*match, history, items,  getItems */}) {
     const [orderData, setOrderData] = useState(DEFAULT_ORDER_DATA);
 
-    const items = DEFAULT_ORDER_DATA.map(item => ({ ...item, price: item.price_per_one * item.amount }))
+    //const items = DEFAULT_ORDER_DATA.map(item => ({ ...item, price: item.price_per_one * item.amount }))
 
-    const [localIds] = useState(DEAFULT_LOCAL_IDS);
+    //const [localIds] = useState(DEAFULT_LOCAL_IDS);
 
     const [pickup, setPickup] = useState(false);
     const [birth, setBirth] = useState(false);
@@ -32,7 +32,7 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
     }, []);
 
     // ITEMS LOADED
-    useEffect(() => {
+    /*useEffect(() => {
       console.log('ITEMS NOW:' + JSON.stringify(items))
       if(items.length && localIds.length){
         const filtered = items.filter(item => localIds.filter(local => local.id == item.id && local.amount > 0).length > 0);
@@ -52,7 +52,7 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
         //setOrderData(data);
         //updateCookies(data);
       }
-    }, [items]);
+    }, [items]);*/
 
     // DISCOUNTS CHANGING
     useEffect(() => {

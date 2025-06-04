@@ -1,49 +1,49 @@
 
-import { Fragment, useState, useEffect, lazy } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import Layout from '../../components/layout/IndexLayout';
 import LoaderScreen from '../../widgets/LoaderScreen';
 import { Link } from 'react-router-dom';
 
 export function MenuItem({ /*match, history, itemId, items, categories, getItems, getCategories */}) {
 
-  const [itemData, setItemData] = useState({
+  const [itemData, /*setItemData*/] = useState({
     id: 0,
-    title: titler(itemId),
+    title: titler('1'),
     description: 'Это чья-то кара или случай или злой рок. Это что, это что, трюьма или живой морг. Они хотят крылья чтоб летать. Чтоб летать. Я беру, что в зипе, для ребят. Для ребят.'
   });
 
-  const [categoryTitle, setCategoryTitle] = useState('...');
-  const [categoryLink, setCategoryLink] = useState();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [categoryTitle, /*setCategoryTitle*/] = useState('...');
+  const [categoryLink, /*setCategoryLink*/] = useState();
+  const [isLoaded, /*setIsLoaded*/] = useState(false);
 
-  const [recData, setRecData] = useState([
+  const [recData, /*setRecData*/] = useState([
     {
-      id: 1,
+      id: '1',
       title: '...',
-      desc: 'Загрузка...',
+      description: 'Загрузка...',
       img: '',
       to: '',
       price: 'хххх'
     },
     {
-      id: 2,
+      id: '2',
       title: '...',
-      desc: 'Загрузка...',
+      description: 'Загрузка...',
       img: '',
       to: '',
       price: 'хххх'
     },
     {
-      id: 3,
+      id: '3',
       title: '...',
-      desc: 'Загрузка...',
+      description: 'Загрузка...',
       img: '',
       to: '',
       price: 'хххх'
     }
   ]);
 
-  function titler(id){
+  function titler(id: string){
     switch(id){
       case '0':
         return 'Жалкий вид и не более'
@@ -58,12 +58,12 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
 
   //MOUNT
   useEffect(() =>{
-    getItems();
-    getCategories();
+    //getItems();
+    //getCategories();
   }, []);
 
   //ITEMS CHANGED
-  useEffect(() => {
+  /*useEffect(() => {
     if(items.length){
       setRecData(() =>[
         items[0],
@@ -75,9 +75,9 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
       if(currentItem)
         setItemData(currentItem);
     }
-  }, [items]);
+  }, [items]);*/
 
-  useEffect(() => {
+  /*useEffect(() => {
     if(categories.length > 0 && itemData.category && !categoryLink){
       const cat = categories.filter(cat => itemData.category == cat.id)[0];
       if(cat){
@@ -86,12 +86,12 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
         setIsLoaded(true);
       }
     }
-  }, [categories, itemData]);
+  }, [categories, itemData]);*/
 
   return (
     <Fragment>
     <LoaderScreen isLoaded={isLoaded} />
-    <Layout backTitle={ categoryTitle } backTo={ '/menu/categories/' + itemData.category } navTitle='' >
+    <Layout backTitle={ categoryTitle } backTo={ '/menu/categories/' + itemData.title } navTitle='' >
       <div className="item-wrapper">
         <div className='item-container'>
           <div className="item">
@@ -128,11 +128,11 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
     </Fragment>
   );
 }
-
+/*
 const mapStateToProps = state => ({
   categories: state.categories.categories,
   items: state.items.items
 });
-
+*/
 //export default connect(mapStateToProps, { getCategories, getItems })(MenuItem);
 export default MenuItem

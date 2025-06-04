@@ -3,11 +3,11 @@
 //import { connect } from 'react-redux';
 import Layout from '../components/layout/IndexLayout';
 import OrderContent from '@/widgets/order/OrderContent';
-import { useLocation } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
 
 export default function Order(/*{ match, history}*/) {
 
-  const location = useLocation()
+  //const location = useLocation()
 
   return (
     <Layout navTitle="Ваш заказ" backTitle='' backTo=''>

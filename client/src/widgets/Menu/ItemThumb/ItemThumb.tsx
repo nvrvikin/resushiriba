@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IMenuItem } from '../../../app/types/types';
 import STYLES from './utils/thumb_styles';
@@ -10,21 +10,21 @@ import NoPhoto from '/static/img/no-photo.png'
 function MenuItemThumb(props: IMenuItem) {
   const {
     id,
-    image_src,
+    //image_src,
     title,
     description,
-    image_link,
+    //image_link,
     price,
     weight,
-    category,
-    is_enabled,
+    //category,
+    //is_enabled,
     is_new,
     is_hit,
     is_preview
   } = props
 
   const [count, addCount, removeCount] = useCount(id)
-  const [isLoading, setIsLoading] = useState(true)
+  //const [isLoading, setIsLoading] = useState(true)
 
   
 

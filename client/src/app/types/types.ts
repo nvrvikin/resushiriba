@@ -2,6 +2,13 @@ export interface IIcon {
     className: string
 }
 
+export interface ICategoryItem {
+  id: string,
+  image_src: string,
+  title: string,
+  to: string
+}
+
 export interface ICategory {
     id: string
     title: string
@@ -15,7 +22,7 @@ export interface IItem {
     image_link: string
     price: number
     weight: number
-    category: number
+    category: string
     is_enabled: boolean
     is_new: boolean
     is_hit: boolean
@@ -29,7 +36,7 @@ export interface IMenuItem {
     image_link: string
     price: number
     weight: number
-    category: number
+    category: string
     is_enabled: boolean
     is_new: boolean
     is_hit: boolean

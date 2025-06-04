@@ -12,74 +12,68 @@ import HotSnaksImg from '/src/img/hot-snacks.jpg';
 import Layout from '../../components/layout/IndexLayout';
 import MenuCategory from '../../components/menu/MenuCategory';
 import Loader from '../../widgets/LoaderScreen'
+import { ICategoryItem } from '@/app/types/types';
 
 //import BgImg from '../../public/img/35.jpg';
 
-export interface ICategoryItem {
-  id: number,
-  imgSrc: string,
-  title: string,
-  to: string
-}
-
-const localData = [
+const localData: ICategoryItem[] = [
   {
-    id: 0,
-    imgSrc: SushiImg,
+    id: '0',
+    image_src: SushiImg,
     title: 'Суши',
     to: 'sushi'
   },
   {
-    id: 1,
-    imgSrc: RollsImg,
+    id: '1',
+    image_src: RollsImg,
     title: 'Роллы',
     to: 'rolls'
   },
   {
-    id: 2,
-    imgSrc: SetsImg,
+    id: '2',
+    image_src: SetsImg,
     title: 'Cеты',
     to: 'sets'
   },
   {
-    id: 3,
-    imgSrc: SoupImg,
+    id: '3',
+    image_src: SoupImg,
     title: 'Горячие блюда',
     to: 'hot'
   },
   {
-    id: 4,
-    imgSrc: PizzaImg,
+    id: '4',
+    image_src: PizzaImg,
     title: 'Пицца',
     to: 'pizza'
   },
   {
-    id: 5,
-    imgSrc: HotSnaksImg,
+    id: '5',
+    image_src: HotSnaksImg,
     title: 'Горячие закуски',
     to: 'hot-snacks'
   },
   {
-    id: 6,
-    imgSrc: ColdSnacksImg,
+    id: '6',
+    image_src: ColdSnacksImg,
     title: 'Холодные закуски',
     to: 'cold-snacks'
   },
   {
-    id: 7,
-    imgSrc: SaladImg,
+    id: '7',
+    image_src: SaladImg,
     title: 'Салаты',
     to: 'salads'
   },
   {
-    id: 8,
-    imgSrc: RollsImg,
+    id: '8',
+    image_src: RollsImg,
     title: 'Другое',
     to: 'other'
   },
   {
-    id: 9,
-    imgSrc: DessertImg,
+    id: '9',
+    image_src: DessertImg,
     title: 'Десерты',
     to: 'desserts'
   }

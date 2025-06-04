@@ -1,13 +1,14 @@
 import { useState } from "react"
-
+/*
 interface IUseCount {
     id: string
 }
-
+*/
 //{ [count: number, addCount: ()=> void, removeCount: () => void] } 
 
 function useCount(id: string)
 : [number, ()=> void, () => void] {
+    console.log(id)
     const [count, setCount] = useState(0)
     //TODO: get count from localStorage
 

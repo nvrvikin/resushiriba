@@ -1,17 +1,22 @@
-import React, { Fragment } from 'react';
-import MetaTags from 'react-meta-tags';
+import { Fragment, ReactNode } from 'react';
+import Helmet from 'react-helmet';
 import SushiRibaIcon192x192 from '../../static/pic/sushi.riba-icon_192x192.png';
 import SushiRibaIcon144x144 from '../../static/pic/sushi.riba-icon_144x144.png';
 import SushiRibaIcon96x96 from '../../static/pic/sushi.riba-icon_96x96.png';
 import SushiRibaIcon48x48 from '../../static/pic/sushi.riba-icon_48x48.png';
-import Style from '../../static/base.css';
+//import Style from '../../static/base.css';
+//<link rel="stylesheet" type="text/css" href={ Style } />
 
-function CommonLayout(props) {
+interface ICommonLayout {
+    children: ReactNode
+}
+
+function CommonLayout(props: ICommonLayout) {
     return (
         <Fragment>
             <head>
-                <MetaTags>
-                    <meta charset="UTF-8" />
+                <Helmet>
+                    <meta charSet="UTF-8" />
                     <link rel="icon" sizes="192x192" href={SushiRibaIcon192x192} />
                     <link rel="icon" sizes="144x144" href={SushiRibaIcon144x144} />
                     <link rel="icon" sizes="96x96" href={SushiRibaIcon96x96} />
@@ -21,11 +26,11 @@ function CommonLayout(props) {
                     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-                    <link rel="stylesheet" href={Style} />
+                    
                     <title>СушиРыба</title>
-                    <meta name="description" content="Some description." />
+                    <meta name="description" content="RE: SushiRiba Website." />
                     <meta name="apple-mobile-web-app-title" content="СушиРыба" />
-                </MetaTags>
+                </Helmet>
             </head>
             {props.children}
             

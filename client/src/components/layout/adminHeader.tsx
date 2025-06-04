@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import Logo from '../icons/LogoIcon';
+import Logo from '@/shared/ui/icons/LogoIcon';
 
 interface IAdminHeader {
     active: string

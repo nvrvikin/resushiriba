@@ -6,3 +6,5 @@ const store = configureStore({
         itemReducer
     })
 })
+
+export default store

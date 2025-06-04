@@ -5,7 +5,6 @@ import { Fragment, useState, useEffect, useRef, useId } from 'react';
 import itemsData from '../app/data/localItems'
 
 import SmokeLeftImg from '/src/img/s2.png';
-import PBricksImg from '/src/img/purple_bricks.png';
 import BlackStoneWallImg from '/src/img/black-stone-wall.jpg';
 
 import Header from '../widgets/Header';
@@ -13,7 +12,7 @@ import Footer from '../widgets/Footer/Footer';
 import MenuItem from '../widgets/Menu/ItemThumb/ItemThumb';
 import Loader from '../widgets/LoaderScreen'
 
-import BgImg from '/src/img/32.png';
+//import BgImg from '/src/img/32.png';
 
 
 //import RoundedUnderIcon from '../components/icons/RoundedUnderIcon';
@@ -29,15 +28,15 @@ export function ItemPreviw() {
 
 export function Index({ /*items, getItems*/ }) {
 
-    const ON_LOADING_ITEMS_LABEL = 'Загрузка...';
+    //const ON_LOADING_ITEMS_LABEL = 'Загрузка...';
 
-    let handRef = useRef<HTMLImageElement | null>(null);
-    let handLightRef = useRef<HTMLImageElement | null>(null);
+    //let handRef = useRef<HTMLImageElement | null>(null);
+    //let handLightRef = useRef<HTMLImageElement | null>(null);
     let SmokeLeftRef = useRef<HTMLImageElement | null>(null);
     
-    const [homeTitle, setHomeTitle] = useState('SushiРыба');
+    //const [homeTitle, setHomeTitle] = useState('SushiРыба');
     const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState(itemsData)
+    const [items, /*setItems*/] = useState(itemsData)
 
     const placeholderItem = {
         imgSrc: '',
@@ -84,8 +83,8 @@ export function Index({ /*items, getItems*/ }) {
 
     function handleFirstSmokeOnScroll() {
         let offset = window.scrollY;
-        let clientHeight = window.innerHeight;
-        let height = window.document.body.offsetHeight - clientHeight;
+        //let clientHeight = window.innerHeight;
+        //let height = window.document.body.offsetHeight - clientHeight;
 
         if(SmokeLeftRef.current) {
             SmokeLeftRef.current!.style.bottom = `calc(-150px - ${offset * 0.05}px)`
@@ -129,7 +128,7 @@ export function Index({ /*items, getItems*/ }) {
             setIsLoaded(true);
             setHitsData(filteredItems);
         }
-    }, [items, PBricksImg]);
+    }, [items]);
     
     
     
@@ -169,7 +168,7 @@ export function Index({ /*items, getItems*/ }) {
                                             description={item?.desc} 
                                             price={item?.price}
                                             weight={item?.weight}
-                                            category={0}
+                                            category={'0'}
                                             is_new={false}
                                             is_hit={true}
                                             is_preview={false}

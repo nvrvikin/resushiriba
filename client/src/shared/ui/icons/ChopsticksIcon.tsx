@@ -1,11 +1,11 @@
-import React from 'react';
+import { IIcon } from "@/app/types/types";
 
-const ChopsticksIcon = props => (
-    <div className={props.className}>
+const ChopsticksIcon = ({ className }: IIcon) => (
+    <div className={className}>
         <svg version="1.1" id="chopsticks" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			 viewBox="0 0 89.81 64.23" xmlSpace="preserve">
-			<g id="Chopsticks" class="st1">
-				<path class="st2" d="M72.87,37.2l-7.05-11.67l-0.28-14.15c0-0.62-0.5-1.13-1.13-1.13s-1.13,0.5-1.13,1.12l-0.19,9.65l-4.99-8.25
+			<g id="Chopsticks">
+				<path d="M72.87,37.2l-7.05-11.67l-0.28-14.15c0-0.62-0.5-1.13-1.13-1.13s-1.13,0.5-1.13,1.12l-0.19,9.65l-4.99-8.25
 					c-0.29-0.52-1.01-0.71-1.53-0.42c-0.53,0.31-0.72,1-0.42,1.53L63,26.29l-0.27,13.64c0,0.93,0.76,1.69,1.69,1.69
 					c0.93,0,1.69-0.76,1.69-1.7l-0.17-8.28l4.01,7.27c0.3,0.52,0.86,0.85,1.47,0.85h0c0.3,0,0.59-0.08,0.85-0.23
 					c0.39-0.22,0.67-0.59,0.78-1.03C73.17,38.06,73.1,37.6,72.87,37.2z M63.06,23.13l-0.02,0.91l-5.9-10.7L63.06,23.13z M64.42,40.5

@@ -1,6 +1,6 @@
-import { IIcon } from "../types/types";
+import { IIcon } from "@/app/types/types";
 
-function ArrowIcon({ className }:IIcon) {
+function ArrowIcon({ className }: IIcon) {
   return (
     <div className={ className }>
       <svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 97.66 278" xmlSpace="preserve">

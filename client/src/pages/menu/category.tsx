@@ -73,7 +73,7 @@ interface ICategoryProps {
 }
 
 function Category(props: ICategoryProps) {
-	const [categoryId, setCategoryId] = useState(0)
+	const [categoryId, setCategoryId] = useState('0')
 	const [pageTitle, setPageTitle] = useState('...')
 	const [dataToShow, setDataToShow] = useState<IItem[]>([])
 	const [loaded, setLoaded] = useState(false)

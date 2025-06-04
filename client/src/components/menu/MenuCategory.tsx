@@ -1,19 +1,20 @@
-import { Fragment } from 'react';
+import { ICategoryItem } from '@/app/types/types';
 import { Link } from 'react-router-dom';
-import { ICategoryItem } from '../../pages/menu/menu';
 
 interface IMenuCategory {
   data: ICategoryItem[]
 }
 
-function MenuCategory({data}: IMenuCategory) {
+function MenuCategory(props: IMenuCategory) {
+  const { data } = props
+
   return (
-    <Fragment>
+    <>
     {
       data.map(item =>
       <Link className="menu-category" key={item.id} to={'/menu/categories/' + item.to}>
         <div className="menu-category__img-container">
-          <img className="menu-category__img" src={item.imgSrc}></img>
+          <img className="menu-category__img" src={item.image_src}></img>
         </div>
         <div className="menu-category__title-box">
           <h1 className="menu-category__title">{item.title}</h1>
@@ -21,7 +22,7 @@ function MenuCategory({data}: IMenuCategory) {
       </Link>
       )
     }
-  </Fragment>
+  </>
   )
 }
 
