@@ -230,6 +230,7 @@
         margin-left: 48px;
         display: flex;
         align-items: center;
+        justify-content: center;
 
         .contacts-geo__phone-icon{
             width: 20px;
@@ -237,7 +238,6 @@
             transition: $standart-transition;
             fill: $action-color;
             margin-right: 8px;
-            transform: translateY(-6px);
         }
 
         &:hover{
@@ -256,7 +256,6 @@
             .contacts-geo__phone-icon{
                 width: 18px;
                 height: 18px;
-                transform: translateY(-5px);
             }
         }
 
@@ -268,7 +267,6 @@
             .contacts-geo__phone-icon{
                 width: 16px;
                 height: 16px;
-                transform: translateY(-4px);
             }
         }
 
@@ -279,7 +277,6 @@
             .contacts-geo__phone-icon{
                 width: 14px;
                 height: 14px;
-                transform: translateY(-5px);
             }
         }
     }

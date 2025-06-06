@@ -33,15 +33,17 @@ const HeaderSm = (props: IHeaderSmProps) => {
                     </div>
                 </div>
                 <div className={smOpened == false ? 'header-sm__items hidden' : 'header-sm__items'}>
-                    <Link to='/' className='navMenuLink'>Главная</Link>
-                    <Link to="/menu" className='navMenuLink'>Меню</Link>
-                    <Link to="/news" className='navMenuLink'>Акции</Link>
-                    <Link to="/order" className='navMenuLink navMenuLink_order'>
-                      <span>Заказ
-                        <span className='navMenuLink-order__index'>12</span>
-                      </span>
+                    <Link to='/' className='header-sm-items__item'>Главная</Link>
+                    <Link to="/menu" className='header-sm-items__item'>Меню</Link>
+                    <Link to="/news" className='header-sm-items__item'>Акции</Link>
+                    <Link to="/order" className='header-sm-items__item header-sm-items__item_order'>
+                    <span>
+                        Заказ
+                        <span className='order-index'>12</span>
+                    </span>
+                      
                     </Link>
-                    <Link to="/contacts" className='navMenuLink'>Контакты</Link>
+                    <Link to="/contacts" className='header-sm-items__item'>Контакты</Link>
                 </div>
             </header>
     )

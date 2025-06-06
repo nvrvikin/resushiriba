@@ -66,7 +66,7 @@
                     content: '';
                     position: absolute;
                     top: 2px;
-                    left: 10px;
+                    //left: .3rem;
                     //transform: translateY(-50%);
                     height: 16px;
                     width: 16px;
@@ -137,7 +137,7 @@
         }
 
         &.order-table__head-title_price{
-            right: 60px;
+            right: 0;
         }
     }
 }
@@ -218,6 +218,15 @@
 
                     &.order-table__title_free {
                         color: #ffd382;
+                        
+
+                        @include between($xs, $sm){
+                            font-size: .8rem;
+                        }
+                    
+                        @include smaller($xs){
+                            font-size: .8rem;           
+                        }
                     }
                 }
             }
@@ -245,7 +254,7 @@
         
             &.order-table__cell_price{
                 top: 0;
-                right: 60px;
+                right: 0;
     
                 color: $action-color;
             }
@@ -290,7 +299,8 @@
         //top: 0;
         top: 50%;
         transform: translateY(-50%) translateX(-50%);
-        left: calc(100% - 60px);
+        //left: calc(100% - 60px);
+        right: 0;
         color: $action-color;
     }
 }
