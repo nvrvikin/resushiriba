@@ -80,7 +80,7 @@
     justify-self: center;
     align-self: center;
     position: relative;
-    background-color: rgb(107, 107, 107);
+    //background-color: #6b6b6b;
 
     &::after{
         content: '';
@@ -244,7 +244,7 @@
     object-fit: cover;
     background-size: cover;
     transition: .3s ease;
-    background-color: #e7e7e7;
+    //background-color: #e7e7e7;
 }
 
 .menu-item-thumb__title{
@@ -272,11 +272,20 @@
 
 .menu-item-thumb__desc{
     margin: 0 1.5rem;
+    //padding: 0 1.5rem;
     text-align: left;
     color: #dfdfdf;
     font-size: 0.9rem;
     font-weight: 300;
-    line-height: normal;
+    line-height: 0.9rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include between($md, $lg){
         margin: 0 22px;

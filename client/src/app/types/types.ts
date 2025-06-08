@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface IIcon {
     className: string
 }
@@ -6,19 +8,19 @@ export interface ICategoryItem {
   id: string,
   image_src: string,
   title: string,
-  to: string
+  link: string
 }
 
 export interface ICategory {
     id: string
     title: string
-    cat_link: string
+    link: string
 }
 
 export interface IItem {
     id: string
     title: string
-    description: string
+    description: ReactNode
     image_link: string
     price: number
     weight: number
@@ -32,7 +34,7 @@ export interface IMenuItem {
     id: string
     image_src: string
     title: string
-    description: string
+    description: ReactNode
     image_link: string
     price: number
     weight: number
@@ -47,9 +49,8 @@ export interface IOrderItem {
   id: string
   title: string
   amount: number
-  price_per_one: number
-  type: string
-  subitems: IOrderSubitem[]
+  price: number
+  image_link: string
 }
 
 export interface IOrderSubitem {
@@ -63,8 +64,15 @@ export interface IOrderSubitem {
 export interface IOrderItemRow {
   id: string
   item_data: IOrderItem
-  addFunc: (id: string) => void
-  removeFunc: (id: string) => void
+}
+
+export interface ICartLSItem {
+    id: string,
+    amount: number
+}
+
+export interface ICartState {
+    items: ICartLSItem[]
 }
 
 //TODO: image_src & image_link ???

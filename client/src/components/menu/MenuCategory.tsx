@@ -12,7 +12,7 @@ function MenuCategory(props: IMenuCategory) {
     <>
     {
       data.map(item =>
-      <Link className="menu-category" key={item.id} to={'/menu/categories/' + item.to}>
+      <Link className="menu-category" key={item.id} to={'/menu/categories/' + item.link}>
         <div className="menu-category__img-container">
           <img className="menu-category__img" src={item.image_src}></img>
         </div>

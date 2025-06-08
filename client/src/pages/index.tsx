@@ -13,6 +13,7 @@ import Header from '../widgets/Header';
 import Footer from '../widgets/Footer/Footer';
 import MenuItem from '../widgets/Menu/ItemThumb/ItemThumb';
 import Loader from '../widgets/LoaderScreen'
+import { IItem } from '@/app/types/types';
 
 //import BgImg from '/src/img/32.png';
 
@@ -40,18 +41,19 @@ export function Index({ /*items, getItems*/ }) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, /*setItems*/] = useState(itemsData)
 
-    const placeholderItem = {
-        imgSrc: '',
+    const placeholderItem: Omit<IItem, 'id'> = {
         title: '',
-        desc: '', 
+        description: '', 
+        image_link: '',
         price: -1,
         weight: -1,
+        category: '0',
+        is_enabled: true,
+        is_new: false,
         is_hit: false,
-        isPlaceHolder: true,
-        to: "-1"
     }
 
-    const [hitsData, setHitsData] = useState([
+    const [hitsData, setHitsData] = useState<IItem[]>([
         {
             id: useId(),
             ...placeholderItem
@@ -96,6 +98,7 @@ export function Index({ /*items, getItems*/ }) {
     // On Mount
     useEffect(() => {
         //getItems();
+        window.scrollTo(0, 0)
         window.addEventListener("scroll", handleFirstSmokeOnScroll);
         let offset = window.scrollY;
         if(SmokeLeftRef.current) {
@@ -138,8 +141,8 @@ export function Index({ /*items, getItems*/ }) {
         <Fragment>
             <Header className="header_home" />
             <Loader isLoaded={isLoaded} />
+            <div className='home-dark-overlay' />
             <div className="home-wrapper">
-                <div className='home-dark-overlay'></div>
                 <section className="greet-wrapper" style={{ backgroundImage: `url(${BlackStoneWallImg})`}}>
                     <div className="home-label">
                         <img className="home-label__vector" src={ HomeLabelImg } alt="Вкус Японии"></img>
@@ -155,26 +158,24 @@ export function Index({ /*items, getItems*/ }) {
                     <div className='hits-items'>
                         {
                             hitsData.map(item =>
-                                item?.isPlaceHolder ? (
-                                        <ItemPreviw key={item?.id} />
-                                    ) : (
-                                        <MenuItem
-                                            key={item?.id}
-                                            id={item?.id}
-                                            image_src="/static/img/cezar.jpg"
-                                            image_link=''
-                                            title={item?.title}
-                                            description={item?.desc} 
-                                            price={item?.price}
-                                            weight={item?.weight}
-                                            category={'0'}
-                                            is_new={false}
-                                            is_hit={true}
-                                            is_preview={false}
-                                            is_enabled={true}
-                                            
-                                        />
-                                    )
+                                (
+                                    <MenuItem
+                                        key={item?.id}
+                                        id={item?.id}
+                                        image_src={ item?.image_link }
+                                        image_link={ item?.image_link }
+                                        title={ item?.title }
+                                        description={ item?.description } 
+                                        price={ item?.price }
+                                        weight={ item?.weight }
+                                        category={ item?.category }
+                                        is_new={ item?.is_new }
+                                        is_hit={ item?.is_hit }
+                                        is_preview={false}
+                                        is_enabled={true}
+                                        
+                                    />
+                                )
                             )                        
                         }
                     </div>

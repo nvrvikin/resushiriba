@@ -2,12 +2,14 @@ import { Fragment } from 'react';
 import LogoIcon from '@/shared/ui/icons/LogoIcon';
 import { Link } from 'react-router-dom';
 import HeaderSm from './HeaderSm';
+import { useCart } from '@/app/contexts/cart/CartContext';
 
 export interface IHeaderProps {
     className?: string
 }
 
 export default function Header(props: IHeaderProps) {
+    const { items } = useCart()
     const defineClassName = () => {
         if (props?.className) return ' ' + props.className
         return ''
@@ -25,7 +27,7 @@ export default function Header(props: IHeaderProps) {
                     </Link>
                     <Link to="/order" className='header-nav__link header-nav__link_order'>
                       <span className='link-order__label'>Заказ
-                        <span className='link-order__index'>12</span>
+                        <span className='link-order__index'>{ items.length ? items.length : '' }</span>
                       </span>
                     </Link>
                     <Link to="/contacts" className='header-nav__link'>Контакты</Link>

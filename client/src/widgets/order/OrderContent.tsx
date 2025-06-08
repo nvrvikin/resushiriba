@@ -10,10 +10,12 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import OrderTable from './OrderTable/OrderTable';
-import { DEFAULT_ORDER_DATA } from './data/order_data';
+import { useCart } from '@/app/contexts/cart';
+import { IOrderItem } from '@/app/types/types';
 
 export function OrderContent({ /*match, history, items,  getItems */}) {
-    const [orderData, setOrderData] = useState(DEFAULT_ORDER_DATA);
+  const { orderItems } = useCart() 
+    const [orderData, setOrderData] = useState<IOrderItem[]>([]);
 
     //const items = DEFAULT_ORDER_DATA.map(item => ({ ...item, price: item.price_per_one * item.amount }))
 
@@ -23,13 +25,17 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
     const [birth, setBirth] = useState(false);
     const [happyHours, setHappyHours] = useState(false);
     const [discount, setDiscount] = useState(1);
-    const [deleteItem, setDeleteItem] = useState(false);
+    //const [deleteItem, setDeleteItem] = useState(false);
 
     // MOUNT
     useEffect(() => {
       //getItems();
       //if(cookie.load(COOKIE_NAME)) setLocalIds(cookie.load(COOKIE_NAME));
     }, []);
+
+    useEffect(() => {
+      setOrderData(orderItems)
+    }, [orderItems])
 
     // ITEMS LOADED
     /*useEffect(() => {
@@ -56,58 +62,9 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
 
     // DISCOUNTS CHANGING
     useEffect(() => {
-      if(birth || happyHours) setDiscount(0.85);
-      else if(pickup) setDiscount(0.9);
-      else setDiscount(1);
+      const newDiscount = 1 - (birth || happyHours ? 0.15 : 0) - (pickup ? 0.1 : 0)
+      setDiscount(newDiscount);
     }, [pickup, birth, happyHours]);
-
-    // DELETING ON ZERO
-    useEffect(() => {
-      if(deleteItem) {
-        const newData = orderData.filter(item => item.amount > 0);
-        setDeleteItem(false);
-        setOrderData(newData);
-      }
-    }, [deleteItem]);
-
-    /*// UPDATE ORDER DATA CHANGED
-    function updateOrderData(){
-      setLocalIds(orderData.map(data => {
-        return { id: data.id, amount: data.amount }
-      }));
-    }*/
-
-    function onClickAdd(id: string) {
-      setOrderData(() =>
-        {
-          const newData = orderData.map(item => {
-            if(item.id == id){
-              item.amount++;
-              if(item.amount > 99) item.amount = 99
-            }
-            return item;
-          })
-          return newData;
-        }
-      );
-      console.log("добавлен " + id)
-    }
-
-    function onClickRemove(id: string) {
-        setOrderData(() => 
-            {
-                const newData = orderData.map(item => {
-                    //let check = true;
-                    if(item.id == id){
-                      item.amount--;
-                      if(item.amount < 1) setDeleteItem(true);
-                    }
-                    return item;
-                })
-                return newData;
-            })
-      console.log("удален " + id)
-    }
 
     // RETURN
     if(orderData.length){
@@ -134,11 +91,7 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
                     ></div>
                   </div>
                 </div>
-                <OrderTable data={orderData}
-                  discount={discount}
-                  addFunc={onClickAdd}
-                  removeFunc={onClickRemove}
-                  />
+                <OrderTable data={ orderData } discount={ discount } />
           </Fragment>
         );
     } else {
@@ -151,7 +104,4 @@ export function OrderContent({ /*match, history, items,  getItems */}) {
     }
   }
 
-  //const mapStateToProps = state => ({ items: state.items.items });
-
-  //export default connect(mapStateToProps, { getCategories, getItems })(OrderContent)
   export default OrderContent

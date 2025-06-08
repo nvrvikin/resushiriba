@@ -9,7 +9,7 @@ import Order from './pages/order'
 import News from './pages/news'
 import Contacts from './pages/contacts'
 //import Admin from './pages/admin/adminRouter'
-//import NoMatch from './pages/noMatch'
+import NoMatch from './pages/noMatch'
 //import 'bootstrap/dist/css/bootstrap.min.css'
 //import style from '../sass/main.scss'
 
@@ -24,7 +24,8 @@ const appRouter = createBrowserRouter(createRoutesFromElements([
       <Route path="menu/*" element={<MenuRouter />} />,
       <Route path="order/*" element={<Order />} />,
       <Route path="news/*" element={<News />} />,
-      <Route path="contacts/*" element={<Contacts />} />
+      <Route path="contacts/*" element={<Contacts />} />,
+      <Route path="/*" element={<NoMatch />} />
 ]))
 
 function App() {

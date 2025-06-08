@@ -1,0 +1,12 @@
+
+
+enum ITEM_ACTION_TYPES {
+    ADD_ITEM = 'ADD_ITEM',
+    REMOVE_ITEM = 'REMOVE_ITEM',
+    CLEAR_CART = 'CLEAR_CART',
+    LOAD_CART = 'LOAD_CART',
+}
+
+
+
+export default ITEM_ACTION_TYPES

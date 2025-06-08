@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
 import LogoIcon from "@/shared/ui/icons/LogoIcon";
+import { useCart } from "@/app/contexts/cart/CartContext";
 
 export interface IHeaderSmProps {
     className?: string
 }
 
 const HeaderSm = (props: IHeaderSmProps) => {
+    const { items } = useCart()
     const [smOpened, setSmOpened] = useState(false);
 
     const defineClassName = () => {
@@ -39,7 +41,7 @@ const HeaderSm = (props: IHeaderSmProps) => {
                     <Link to="/order" className='header-sm-items__item header-sm-items__item_order'>
                     <span>
                         Заказ
-                        <span className='order-index'>12</span>
+                        <span className='order-index'>{ items.length ? items.length : '' }</span>
                     </span>
                       
                     </Link>

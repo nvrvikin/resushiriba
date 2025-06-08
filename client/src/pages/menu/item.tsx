@@ -8,8 +8,8 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
 
   const [itemData, /*setItemData*/] = useState({
     id: 0,
-    title: titler('1'),
-    description: 'Это чья-то кара или случай или злой рок. Это что, это что, трюьма или живой морг. Они хотят крылья чтоб летать. Чтоб летать. Я беру, что в зипе, для ребят. Для ребят.'
+    title: 'title',
+    description: 'description'
   });
 
   const [categoryTitle, /*setCategoryTitle*/] = useState('...');
@@ -42,19 +42,6 @@ export function MenuItem({ /*match, history, itemId, items, categories, getItems
       price: 'хххх'
     }
   ]);
-
-  function titler(id: string){
-    switch(id){
-      case '0':
-        return 'Жалкий вид и не более'
-      case '1':
-        return 'Первый человек';
-      case '2':
-        return 'Как рыба гниёт с головы';
-      default:
-        return 'Остатки';
-    }
-  }
 
   //MOUNT
   useEffect(() =>{

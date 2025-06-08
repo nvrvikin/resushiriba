@@ -7,6 +7,7 @@ export default function News() {
   const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
+      window.scrollTo(0, 0)
       loaderDocListener(() => setIsLoaded(true))
     }, [])
 

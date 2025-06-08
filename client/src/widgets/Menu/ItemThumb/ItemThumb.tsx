@@ -13,7 +13,7 @@ function MenuItemThumb(props: IMenuItem) {
     //image_src,
     title,
     description,
-    //image_link,
+    image_link,
     price,
     weight,
     //category,
@@ -24,12 +24,14 @@ function MenuItemThumb(props: IMenuItem) {
   } = props
 
   const [count, addCount, removeCount] = useCount(id)
+
   //const [isLoading, setIsLoading] = useState(true)
 
   
 
   // MOUNT
   useEffect(() => {
+    
 
     /*
     if(cookie.load(COOKIE_NAME)){
@@ -76,7 +78,7 @@ function MenuItemThumb(props: IMenuItem) {
           <div onClick={ addCount } className="noselect menu-item-thumb__add-btn">+</div>
           <div className={"menu-item-thumb__added-count" + (count > 0 ? " menu-item-thumb__added-count_visible" : "" )}>{ count }</div>
           <div onClick={ removeCount } className={ "noselect menu-item-thumb__remove-btn" + (count > 0 ? " menu-item-thumb__remove-btn_visible" : "" )}>-</div>
-          <img className="menu-item-thumb__img" src={ NoPhoto }></img>
+          <img className="menu-item-thumb__img" src={ image_link ? image_link : NoPhoto }></img>
         </div>
         {
           is_preview ?

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useCart } from "@/app/contexts/cart/CartContext"
+import { useEffect, useState } from "react"
 /*
 interface IUseCount {
     id: string
@@ -8,19 +9,27 @@ interface IUseCount {
 
 function useCount(id: string)
 : [number, ()=> void, () => void] {
-    console.log(id)
+    const {addToCart, items, removeFromCart} = useCart()
     const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        const currentItem = items.find(item => item.id === id)
+        if(currentItem) setCount(currentItem.amount)
+        else setCount(0)
+    }, [items])
     //TODO: get count from localStorage
 
     const addCount = () => {
-        if(count < 99) setCount(count + 1)
-        else setCount(99)
+        addToCart({ id })
+        //if(count < 99) setCount(count + 1)
+        //else setCount(99)
         //TODO: write value to localStorage
     }
 
     const removeCount = () => {
-        if(count > 0) setCount(count - 1)
-        else setCount(0)
+        removeFromCart(id)
+        //if(count > 0) setCount(count - 1)
+        //else setCount(0)
         //TODO: write value to localStorage
     }
 
